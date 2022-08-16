@@ -1,0 +1,17 @@
+find and replace with sed command:-
+
+sed 's/root/udemy/' file name -->> this command to replace word with existing word,,,Note this command wit replace only root in every first line in the file
+
+
+sed 's/root/udemy/g' file name -->> this command to repace word with existing word in the files of each and every line globally means in the file all the lines with root word will be replaced
+
+sed 's/demon/systemctl/2' file name -->> this command will replace if 2nd word demon in the line of the file not fist line since we mentioned numerical 2
+
+sed '/devops/s/bash/kash/' file name -->> this command will search devops and in that line it will replace with /bash/ with /kash/
+if we g next /ksahs/ for globally or multiple replace 
+
+
+
+
+
+
