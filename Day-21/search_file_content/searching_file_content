@@ -1,0 +1,18 @@
+
+searching content with sed command :-
+
+
+>> all these commands to serach the word in the files 
+sed -n '/echo/p' file name 
+sed -n '/bin/p' file name
+sed -n '/if/p' file name
+
+
+sed -n -e '/echo/p' -e  '/bin/p' file name --->> this will print two word in the file 
+
+sed -n '10,$!d' file name --> this will delete in reverse formate like 1 to 9 it will delete and from 10th line it will not delete
+
+sed '/echo/!d' file name -->> this will not delete echo word in the line of the file because we are using symbol !
+
+
+
