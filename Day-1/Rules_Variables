@@ -1,0 +1,13 @@
+ 
+
+Rules to define the variable names.?
+
+> the names of variable can only contain letters(a to z or A to Z)
+
+> number (0 to 9)
+
+> underscore character (_)
+
+> variable name can be start with only letter or underscore
+
+> dont include space in variable name before or after 
