@@ -1,0 +1,285 @@
+Shell Scritping Commands/Information :-
+
+
+command to check which shell we are using
+which $SHELL
+
+command to check what are kinds of shell is available in the os
+cat /etc/shells
+
+command to set the path in /usr/bin as a temporary  
+export PATH=${PATH}: full path location /opt/apache-maven-3.8.6/bin -- there are many ways is there
+
+
+command to comment the lines in types
+# --> this symbol to comment only for one word or one line
+<< comm --> this symbol to comment for multiple lines since it is big lines  
+comm
+
+command to store all files or anything 
+ls > file_name.txt
+ls -la -->> to display 
+cat file_name --> to display 
+
+
+command to check system defined variables 
+env
+print env 
+set | grep USER
+env | grep USER 
+cho "$USER"
+echo "$SHELL"
+NOTE:-->> always our system define variable we should enter in capitals and they are in capitals to see that one
+
+
+command to check in shell previosusly used executed command status or previosus command which is got success
+echo $?
+
+
+echo command meanings or information:-
+1. this is a built command that is mostly used in shell script to display 
+a. any string/text/message
+b. any variable
+c. any command output
+
+Basic syntax of echo command is:-
+a. echo string/text/message
+b. echo $variable 
+c. echo $(command)
+
+
+command to delete the substring matching
+path_tom="/opt/apache-tomcat-9.6.0.tar.gz"
+echo "${path_tom%tar.gz}" -->> this using % command we ca =n delete the end of the file location or make it short 
+echo "${oath_tom#/opt}" -->> using this # symbol we can delete in the beginning of path 
+
+
+# many  ways to get cut command:-
+cat /etc/password | cut -c 2
+cut -c 2 /etc/password
+
+General sytax of for cut command:-
+# cut options <range of charcter/bytes/fields> file
+# or
+# command outputs | cut options
+
+# examples of below cut command with options:-
+
+# cut - b/-c/-f range of bytes/charcter/fields file name
+# commands output |  cut - b/-c/-f range of bytes/charcter/fields file name
+
+# cut -d ':' -f 2 /etc/password  --->> so here -f means fields doesnt know that which colomn to take it because -f fields will work based
+# on space/delimiter/tab between the colomn so when ever our file doesnt have space/delimiter/tab so we need to check what else is available in my
+# case ':' colon was aviable to i used -d and provide the options for -d to know and select the fileds
+
+## another option for -d fields:-
+#cut -d ':' -f 2 --output-delimiter="******" file name  ---> so that it will display as our wish of -d output
+
+
+## another option for -d fields
+# cut -s -d ':' -f 2 /etc/password -- this command is for when in the file or fileds there is no field separate then we will mention -s to elminate that
+
+
+# complement option with cut command:-
+# syntax:-
+# cut --complement -b -f 3-4 file --> in this case mentioning --complement means filed we have mentioned  -f 3-4 so after mentioning --complement
+# so that apart from -f 3-4 fileds rest all will display
+# cut --complement -c -f 4-7 file --> --> in this case mentioning --complement means filed we have mentioned  -f 4-7 so after mentioning --complement
+# so that apart from -f 4-7 fileds rest all will display
+
+
+
+SED Commands:-
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+# instertion and deletion with sed command :-
+
+# sed commands with insert and delete :
+# sed '1i s_no name salary' file name --->> so in this command if we want to insert something before one line then we need to use line NO. and i
+# this above command is only for temporary purpose because we can mention this as temporary to display the file but not in the original file
+
+
+#in this below command mentioning -i option we can modify permenant in the file
+# sed -i '1i s_no name salary' file name
+
+
+#in this below command if we want to mentione some information or data after the line we need to use a with line NO.
+# sed -i '1a ===========' file name
+
+
+
+#in this below command if we want to mention some information or data after last line then we need to use $ symbol with a
+# sed -i '$a ===========' file name
+
+
+# in this below command we command we can search and insert a line before narendra with using i
+# sed -i '/narendra/i what is ur name' file name
+
+
+
+#in this below command we can delete lines which we dont want to reside using option line NO and option d
+# sed -i '3d' file name
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+what is Regex ?
+Regex is the shortcut for regular expression
+if any expression uses that pattern then that expression is called Regex
+
+
+what is the pattern ?
+pattern is string which represents more then one word
+
+sed -n '/p[uo]t/p' filename -- this will search two different word in sed commands by put and pot also it will print that words by using /p
+
+the special character of in regec are:-
+> \s\t. *\+ \? and \
+
+
+sed -n '/\s/p' file name --->> it will lines which is have space between line by using \s --> matches for space
+
+sed -n '/\\s/p' file name --->> i twill print the lines which is having \s by using \\s -->> its escape character
+
+sed -n '/\t/p' file name --> it will print line which is having space \t by using --->> matches for tab
+
+sed -n '/p.t/p -->> it will print all lines which is starts with P and ends with T since we used in between p.t . -->> matches nay character including new line
+
+sed -n '/this*/p/ -->> it will print all the lines which ss mentioned many time also which s is not mention word also because we put after s*
+* --> matches a sequence of zero or more instances of matches for the preceding regular expression
+
+sed -n '/this\+/p/ -->> adding the \+ to a word it will print all the words which is having s in this senerio \+ -->> excatly like * but matches one or more
+
+sed -n '/this\?/p/ -->> this will print the all this word   \? -->> excatly as * but only matches zero time or one time .
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+sed -n '/^put/p/' --> this means by using this symbol ^ it will search the starting word of put from the lines of given
+
+sed -n '/put$/p/' --> this means by using this symbol $ it will search a word of put in the given line at end
+
+sed -n '/^$/p' -->> this means by using this symbol ^$ we can find empty lines in a given lines
+
+sed '/^$/d' -->> to delte the lines which are empty -i if we use it will delete the permanent in the file
+
+sed '/\^/p -->> to print only charact symbol by using \^
+
+sed '/\$/p -->> to print only charact symbol by using \$
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+sed -n '/p[you]t/p -->> this means it will print out p within the bracket words comparing to t [] -->> matches any single character in the list
+using p[a-m]t --> it will print all words which starts from p starting letter with a to m and ending letter with t
+
+
+sed -n '/this\{3\}/p --> it will print the lines which is having 3 times s word  {} -->> matches for required number of repetetions.
+also next to 3 in the command if we mention , and any number that many times it will print
+also next to 3 in the command if we mention only , next n numbers of times it prints
+
+
+sed -n '/\(asdfc\)\ {2\}/p ---> this will print repeated words   () -->> this will serach zero or more whole sequence
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Basic syntax of sed command:-
+
+sed [options] 'commands' file-to-work-sed
+
+sed without any action and commands
+
+sed '' file name ---> it will open a file which we mentioned like a cat command
+
+sed 'p' file name ---> in this case p we assinged will print two times a file
+
+sed -n 'p' file name --> -n means it will seperate the line so that our sed will not print twice in the file when we pass 'p' command
+also we can mention before p any sl no to print in the said lines  like below:-
+sed -n '3p' file name
+
+sed -n '$p' file name --> i twill print last line in the file
+
+sed -n '3,5p' --> it will print from 3rd line to 5th line in the file
+
+sed -n '12,+7p' filename -->> it will print from 12th line to lines adding in the file
+
+sed -n '1~5p' file name -->> it will print range of 3 numbers calculating in the file
+
+sed  '49d' file name --> it will delete the line 49th in the file
+
+sed '10,45d' file name --> it will delete the line range way like from 10 to 45 in the file
+
+sed '10,+12d' file name -->> it will delete from 10th to adding 12 lines will it will be deleting it in the file
+
+sed -i '10,+12d' file name -->> this means it will delete permanentley in the file when we mention -i command
+
+sed -i.back  '3,8d' file name --> here this command will take back up of file and then it will delete given lines in the file
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+searching content with sed command :-
+
+
+>> all these commands to serach the word in the files
+sed -n '/echo/p' file name
+sed -n '/bin/p' file name
+sed -n '/if/p' file name
+
+
+sed -n -e '/echo/p' -e  '/bin/p' file name --->> this will print two word in the file
+
+sed -n '10,$!d' file name --> this will delete in reverse formate like 1 to 9 it will delete and from 10th line it will not delete
+
+sed '/echo/!d' file name -->> this will not delete echo word in the line of the file because we are using symbol !
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+find and replace with sed command:-
+
+sed 's/root/udemy/' file name -->> this command to replace word with existing word,,,Note this command wit replace only root in every first line in the file
+
+
+sed 's/root/udemy/g' file name -->> this command to repace word with existing word in the files of each and every line globally means in the file all the lines with root word will be replaced
+
+sed 's/demon/systemctl/2' file name -->> this command will replace if 2nd word demon in the line of the file not fist line since we mentioned numerical 2
+
+sed '/devops/s/bash/kash/' file name -->> this command will search devops and in that line it will replace with /bash/ with /kash/
+if we g next /ksahs/ for globally or multiple replace
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+String Comparisons:  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+=  compare if two strings are equal
+!=  compare if two strings are not equal
+-n  evaluate if string length is greater than zero
+-z  evaluate if string length is equal to zero 
+
+
+Examples: 
+[ s1 = s2 ]  (true if s1 same as s2, else false)
+[ s1 != s2 ]  (true if s1 not same as s2, else false)
+[ s1 ]   (true if s1 is not empty, else false)
+[ -n s1 ]   (true if s1 has a length greater then 0, else false)
+[ -z s2 ]   (true if s2 has a length of 0, otherwise false)
+
+
+Number Comparisons: 
+--------------------------------------------------------------------------------------------------------------------------------------------------
+-eq compare if two numbers are equal
+-ge compare if one number is greater than or equal to a number
+-le  compare if one number is less than or equal to a number
+-ne  compare if two numbers are not equal
+-gt  compare if one number is greater than another number
+-lt  compare if one number is less than another number 
+
+
+Examples: 
+[ n1 -eq n2 ]  (true if n1 same as n2, else false)
+[ n1 -ge n2 ]  (true if n1greater then or equal to n2, else false)
+[ n1 -le n2 ]  (true if n1 less then or equal to n2, else false)
+[ n1 -ne n2 ]  (true if n1 is not same as n2, else false)
+[ n1 -gt n2 ]  (true if n1 greater then n2, else false)
+[ n1 -lt n2 ]  (true if n1 less then n2, else false)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
