@@ -1,0 +1,35 @@
+Basic syntax of sed command:-
+
+sed [options] 'commands' file-to-work-sed
+
+sed without any action and commands
+
+sed '' file name ---> it will open a file which we mentioned like a cat command
+
+sed 'p' file name ---> in this case p we assinged will print two times a file
+
+sed -n 'p' file name --> -n means it will seperate the line so that our sed will not print twice in the file when we pass 'p' command
+also we can mention before p any sl no to print in the said lines  like below:-
+sed -n '3p' file name
+
+sed -n '$p' file name --> i twill print last line in the file
+
+sed -n '3,5p' --> it will print from 3rd line to 5th line in the file 
+
+sed -n '12,+7p' filename -->> it will print from 12th line to lines adding in the file 
+
+sed -n '1~5p' file name -->> it will print range of 3 numbers calculating in the file 
+
+sed  '49d' file name --> it will delete the line 49th in the file 
+
+sed '10,45d' file name --> it will delete the line range way like from 10 to 45 in the file 
+
+sed '10,+12d' file name -->> it will delete from 10th to adding 12 lines will it will be deleting it in the file 
+
+sed -i '10,+12d' file name -->> this means it will delete permanentley in the file when we mention -i command
+
+sed -i.back  '3,8d' file name --> here this command will take back up of file and then it will delete given lines in the file 
+
+
+
+
