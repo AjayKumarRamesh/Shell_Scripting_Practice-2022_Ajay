@@ -1,0 +1,3 @@
+command.sh
+ls_out.txt
+ls_out_from_shell.txt
