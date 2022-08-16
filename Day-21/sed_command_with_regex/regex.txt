@@ -1,0 +1,100 @@
+what is Regex ?
+Regex is the shortcut for regular expression
+if any expression uses that pattern then that expression is called Regex
+
+
+what is the pattern ?
+pattern is string which represents more then one word
+
+sed -n '/p[uo]t/p' filename -- this will search two different word in sed commands by put and pot also it will print that words by using /p
+
+the special character of in regec are:-
+> \s\t. *\+ \? and \
+
+
+sed -n '/\s/p' file name --->> it will lines which is have space between line by using \s --> matches for space
+
+sed -n '/\\s/p' file name --->> i twill print the lines which is having \s by using \\s -->> its escape character 
+
+sed -n '/\t/p' file name --> it will print line which is having space \t by using --->> matches for tab
+
+sed -n '/p.t/p -->> it will print all lines which is starts with P and ends with T since we used in between p.t . -->> matches nay character including new line 
+
+sed -n '/this*/p/ -->> it will print all the lines which ss mentioned many time also which s is not mention word also because we put after s*
+* --> matches a sequence of zero or more instances of matches for the preceding regular expression
+
+sed -n '/this\+/p/ -->> adding the \+ to a word it will print all the words which is having s in this senerio \+ -->> excatly like * but matches one or more
+
+sed -n '/this\?/p/ -->> this will print the all this word   \? -->> excatly as * but only matches zero time or one time .
+-----------------------------------------------------------------------------------------------------------------------------
+
+sed -n '/^put/p/' --> this means by using this symbol ^ it will search the starting word of put from the lines of given 
+
+sed -n '/put$/p/' --> this means by using this symbol $ it will search a word of put in the given line at end 
+
+sed -n '/^$/p' -->> this means by using this symbol ^$ we can find empty lines in a given lines
+
+sed '/^$/d' -->> to delte the lines which are empty -i if we use it will delete the permanent in the file 
+
+sed '/\^/p -->> to print only charact symbol by using \^
+
+sed '/\$/p -->> to print only charact symbol by using \$
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sed -n '/p[you]t/p -->> this means it will print out p within the bracket words comparing to t [] -->> matches any single character in the list
+using p[a-m]t --> it will print all words which starts from p starting letter with a to m and ending letter with t
+
+
+sed -n '/this\{3\}/p --> it will print the lines which is having 3 times s word  {} -->> matches for required number of repetetions.
+also next to 3 in the command if we mention , and any number that many times it will print 
+also next to 3 in the command if we mention only , next n numbers of times it prints
+
+
+sed -n '/\(asdfc\)\ {2\}/p ---> this will print repeated words   () -->> this will serach zero or more whole sequence 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
