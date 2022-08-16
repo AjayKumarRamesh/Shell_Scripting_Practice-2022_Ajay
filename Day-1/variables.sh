@@ -13,4 +13,4 @@ echo "this is the value of x: $x this is the value of y: $y this is value of z: 
 com
 # this below output will print value of xyz in three different lines by providing \n
 echo  "this is the value of x is: $x  \nthis is the value of y is: $y  \nthis is the value of z is: $z"
-
+##
