@@ -31,5 +31,5 @@ sed -i '10,+12d' file name -->> this means it will delete permanentley in the fi
 sed -i.back  '3,8d' file name --> here this command will take back up of file and then it will delete given lines in the file 
 
 
-
+#
 
