@@ -22,3 +22,6 @@ fi
 apt install wget -y
 apt install vim -y
 apt install git -y 
+
+
+#
