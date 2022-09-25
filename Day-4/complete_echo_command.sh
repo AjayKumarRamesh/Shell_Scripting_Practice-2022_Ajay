@@ -1,7 +1,7 @@
 #!bin/bash
 
 
-# this below examples for string/text/message
+## this below examples for string/text/message
 
 echo "welcome to shell script training" 
 
