@@ -1,6 +1,6 @@
 #!bin/bash
 
-# this section is for Input and Output commands with Read command.
+## this section is for Input and Output commands with Read command.
 
 #this below examples for httpd server status
 #status=$(systemctl status httpd | awk 'NR==3{print $2}')
