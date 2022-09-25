@@ -17,4 +17,3 @@ Steps of sequence :-
 2.Why we need this sequence of numbers?
 1. Very useful in loops
 comm
-
