@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This topic is about string and operations 
+## This topic is about string and operations 
 << com
 command to delete the substring matching
 path_tom="/opt/apache-tomcat-9.6.0.tar.gz"
