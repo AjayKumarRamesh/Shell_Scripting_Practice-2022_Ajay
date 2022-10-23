@@ -18,7 +18,7 @@ sed -n '/\\s/p' file name --->> i twill print the lines which is having \s by us
 
 sed -n '/\t/p' file name --> it will print line which is having space \t by using --->> matches for tab
 
-sed -n '/p.t/p -->> it will print all lines which is starts with P and ends with T since we used in between p.t . -->> matches nay character including new line 
+sed -n '/p.t/p -->> it will print all lines which is starts with P and ends with T since we used in between p.t . -->> matches any character including new line 
 
 sed -n '/this*/p/ -->> it will print all the lines which ss mentioned many time also which s is not mention word also because we put after s*
 * --> matches a sequence of zero or more instances of matches for the preceding regular expression
@@ -52,49 +52,4 @@ also next to 3 in the command if we mention only , next n numbers of times it pr
 
 sed -n '/\(asdfc\)\ {2\}/p ---> this will print repeated words   () -->> this will serach zero or more whole sequence 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
 
